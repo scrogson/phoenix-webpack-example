@@ -20,6 +20,7 @@ module.exports = {
   //entry: './app/webpack_javascripts/expenses/app.js',
   entry: {
     app: [
+      'webpack-hot-middleware/client',
       './app.js'
     ]
   },
@@ -42,6 +43,8 @@ module.exports = {
   //},
 
   plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ],
 
