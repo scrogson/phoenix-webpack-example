@@ -12,13 +12,15 @@ config :example, Example.Endpoint,
   code_reloader: true,
   cache_static_lookup: false,
   check_origin: false,
-  watchers: [node: ["node_modules/webpack/bin/webpack.js", "-w", "--stdin"]]
+  watchers: [webpack: ["--progress", "--colors", "--stdin",
+                       "--config", "config/webpack.config.js", "--watch" ]]
 
 # Watch static and templates for browser reloading.
 config :example, Example.Endpoint,
   live_reload: [
     patterns: [
-      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
+      #~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
+      ~r{priv/static/.*(css|png|jpeg|jpg|gif|svg)$},
       ~r{web/views/.*(ex)$},
       ~r{web/templates/.*(eex)$}
     ]
@@ -35,7 +37,7 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :example, Example.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
+  username: "kold",
   password: "postgres",
   database: "example_dev",
   hostname: "localhost",
