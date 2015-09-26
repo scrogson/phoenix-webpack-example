@@ -30,6 +30,8 @@
     "yeticss": "^7.0.5"
   },
   "devDependencies": {
-    "babel-plugin-react-transform": "^1.1.1"
+    "babel-plugin-react-transform": "^1.1.1",
+    "react-transform-catch-errors": "^1.0.0",
+    "react-transform-hmr": "^1.0.1"
   }
 }
