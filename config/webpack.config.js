@@ -20,7 +20,7 @@ module.exports = {
   //entry: './app/webpack_javascripts/expenses/app.js',
   entry: {
     app: [
-      'webpack-hot-middleware/client',
+      'webpack-hot-middleware/client?path=/js',
       './app.js'
     ]
   },
@@ -60,7 +60,7 @@ module.exports = {
         // Pattern to match only files with the '.js' or '.jsx' extension.
         // This tells the loader to only run for those files.
         test: /\.jsx?$/,
-        loaders: ['babel-loader'],
+        loaders: ['babel'],
         exclude: /node_modules/
       }
     ]
