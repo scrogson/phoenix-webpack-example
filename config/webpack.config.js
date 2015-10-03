@@ -1,11 +1,34 @@
 var webpack = require('webpack');
 var path = require('path');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 /**
  * see http://webpack.github.io/docs/configuration.html
  * for webpack configuration options
  */
-module.exports = {
+module.exports = [
+  {
+    name: "app-styles",
+    entry: './web/static/css/app.css',
+    output: {
+      path: './priv/static/css/',
+      filename: 'app.css'
+    },
+    module: {
+      loaders: [
+        {
+          test: /web\/static.*\.css$/,
+          loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+        }
+      ]
+    },
+    plugins: [
+      new ExtractTextPlugin("app.css")
+    ]
+  },
+  {
+  name: 'app-js',
+
   // enable source-maps
   devtool: 'source-map',
 
@@ -65,4 +88,5 @@ module.exports = {
       }
     ]
   }
-};
+}
+];

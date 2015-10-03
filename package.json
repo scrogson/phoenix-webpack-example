@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "babel-plugin-react-transform": "^1.1.1",
+    "extract-text-webpack-plugin": "^0.8.2",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.1",
     "webpack-dev-server": "^1.12.0",
