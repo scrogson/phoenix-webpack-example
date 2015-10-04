@@ -83,8 +83,24 @@ module.exports = [
         // Pattern to match only files with the '.js' or '.jsx' extension.
         // This tells the loader to only run for those files.
         test: /\.jsx?$/,
-        loaders: ['babel'],
-        exclude: /node_modules/
+        loader: 'babel',
+        exclude: /node_modules/,
+        query: {
+          stage: 0,
+          plugins: ['react-transform'],
+          extra: {
+            "react-transform": {
+              "transforms": [{
+                "transform": "react-transform-hmr",
+                "imports": ["react"],
+                "locals": ["module"]
+              }, {
+                "transform": "react-transform-catch-errors",
+                "imports": ["react", "redbox-react"]
+              }]
+            }
+          }
+        }
       }
     ]
   }
