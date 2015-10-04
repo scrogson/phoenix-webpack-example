@@ -13,7 +13,9 @@ config :example, Example.Endpoint,
   cache_static_lookup: false,
   check_origin: false,
   watchers: [webpack: ["--progress", "--colors", "--stdin",
-                       "--config", "config/webpack.config.js", "--watch" ]]
+                       "--config", "config/webpack.config.js", "--watch" ],
+             npm: ["run", "watch-assets"]
+            ]
 
 # Watch static and templates for browser reloading.
 config :example, Example.Endpoint,
