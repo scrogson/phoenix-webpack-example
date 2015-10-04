@@ -45,6 +45,10 @@ module.exports = [
     app: [
       'webpack-hot-middleware/client?path=/js',
       './app.js'
+    ],
+    todo: [
+      'webpack-hot-middleware/client?path=/js',
+      './todomvc/index.js'
     ]
   },
 
