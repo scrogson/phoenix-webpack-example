@@ -12,8 +12,9 @@ config :example, Example.Endpoint,
   code_reloader: true,
   cache_static_lookup: false,
   check_origin: false,
-  watchers: ["webpack-dev-server": ["--progress", "--colors", "--config", "--inline",
-                                    "config/webpack.config.js", "--stdin" ],
+  watchers: [node: ["node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+                    "--progress", "--colors", "--hot", "--inline", "--config",
+                    "config/webpack.config.js", "--stdin" ],
              npm: ["run", "copy-assets"]
             ]
 

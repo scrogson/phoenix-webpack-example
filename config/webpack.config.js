@@ -43,11 +43,9 @@ module.exports = [
   //entry: './app/webpack_javascripts/expenses/app.js',
   entry: {
     app: [
-      'webpack-hot-middleware/client?path=/js',
       './app.js'
     ],
     todo: [
-      'webpack-hot-middleware/client?path=/js',
       './todomvc/index.js'
     ]
   },
@@ -60,7 +58,8 @@ module.exports = [
   output: {
     filename: '[name].js',
     // We want to save the bundle in the Asset Pipleine directory as the other JS.
-    path: path.join(__dirname, '..', '/priv/static/js')
+    path: path.join(__dirname, '..', '/priv/static/js'),
+    publicPath: 'http://localhost:8080/'
   },
 
   //externals: {
@@ -70,8 +69,6 @@ module.exports = [
   //},
 
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ],
 
