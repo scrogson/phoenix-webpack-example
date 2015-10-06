@@ -12,9 +12,9 @@ config :example, Example.Endpoint,
   code_reloader: true,
   cache_static_lookup: false,
   check_origin: false,
-  watchers: [webpack: ["--progress", "--colors", "--stdin",
-                       "--config", "config/webpack.config.js", "--watch" ],
-             npm: ["run", "watch-assets"]
+  watchers: ["webpack-dev-server": ["--progress", "--colors", "--config", "--inline",
+                                    "config/webpack.config.js", "--stdin" ],
+             npm: ["run", "copy-assets"]
             ]
 
 # Watch static and templates for browser reloading.
