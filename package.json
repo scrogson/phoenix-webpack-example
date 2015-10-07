@@ -42,7 +42,7 @@
     "redbox-react": "^1.1.1",
     "redux-devtools": "^2.1.5",
     "todomvc-app-css": "^2.0.1",
-    "webpack-dev-server": "^1.12.0",
+    "webpack-dev-middleware": "^1.2.0",
     "webpack-hot-middleware": "^2.2.0"
   },
   "babel": {
