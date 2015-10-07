@@ -36,6 +36,7 @@
   "devDependencies": {
     "babel-plugin-react-transform": "^1.1.1",
     "chokidar-cli": "^1.0.1",
+    "express": "^4.13.3",
     "extract-text-webpack-plugin": "^0.8.2",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.1",
