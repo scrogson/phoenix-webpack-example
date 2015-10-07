@@ -12,11 +12,7 @@ config :example, Example.Endpoint,
   code_reloader: true,
   cache_static_lookup: false,
   check_origin: false,
-  watchers: [node: ["node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-                    "--progress", "--colors", "--hot", "--inline", "--config",
-                    "config/webpack.config.js", "--stdin" ],
-             npm: ["run", "copy-assets"]
-            ]
+  watchers: [node: ["./config/phoenixWebpackDevServer.js"], npm: ["run", "copy-assets"]]
 
 # Watch static and templates for browser reloading.
 config :example, Example.Endpoint,

@@ -9,9 +9,10 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = [
   {
     name: "app-styles",
-    entry: './web/static/css/app.css',
+    context: path.join(__dirname, '..', '/web/static/css'),
+    entry: './app.css',
     output: {
-      path: './priv/static/css/',
+      path: path.join(__dirname, '..', '/priv/static/css'),
       filename: 'app.css'
     },
     module: {
@@ -43,9 +44,11 @@ module.exports = [
   //entry: './app/webpack_javascripts/expenses/app.js',
   entry: {
     app: [
+      'webpack-hot-middleware/client?path=http://localhost:8080/__webpack_hmr',
       './app.js'
     ],
     todo: [
+      'webpack-hot-middleware/client?path=http://localhost:8080/__webpack_hmr',
       './todomvc/index.js'
     ]
   },
@@ -69,6 +72,7 @@ module.exports = [
   //},
 
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ],
 
