@@ -12,13 +12,16 @@ config :example, Example.Endpoint,
   code_reloader: true,
   cache_static_lookup: false,
   check_origin: false,
-  watchers: [node: ["./config/phoenixWebpackDevServer.js"], npm: ["run", "copy-assets"]]
+  watchers: [
+    webpack: ["--config", "./config/webpack_css.config.js", "--watch-stdin"],
+    node: ["./config/phoenixWebpackDevServer.js"],
+    npm: ["run", "copy-assets"]
+  ]
 
 # Watch static and templates for browser reloading.
 config :example, Example.Endpoint,
   live_reload: [
     patterns: [
-      #~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
       ~r{priv/static/.*(css|png|jpeg|jpg|gif|svg)$},
       ~r{web/views/.*(ex)$},
       ~r{web/templates/.*(eex)$}

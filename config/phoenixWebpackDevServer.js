@@ -1,14 +1,14 @@
 var path = require('path');
 var express = require('express');
 var webpack = require('webpack');
-var config = require('./webpack.config.js');
+var config = require('./webpack_js.config.js');
 
 var app = express();
-var compiler = webpack(config[1]);
+var compiler = webpack(config);
 
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,
-  publicPath: config[1].output.publicPath
+  publicPath: config.output.publicPath
 }));
 
 app.use(require('webpack-hot-middleware')(compiler));
