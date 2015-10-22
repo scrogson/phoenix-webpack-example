@@ -6,7 +6,7 @@
   },
   "scripts": {
     "copy-assets": "cp -R ./web/static/assets/* ./priv/static",
-    "watch-assets": "npm run copy-assets; chokidar ./web/static/assets/**/* -c 'npm run copy-assets'",
+    "watch-assets": "npm run copy-assets; chokidar ./web/static/assets -c 'npm run copy-assets'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
